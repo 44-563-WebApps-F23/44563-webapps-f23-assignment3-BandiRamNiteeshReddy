@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        table, th, td
+        {
+          border:0.5px solid black;
+        }
+        </style>
 <head>
 <title>About Me</title>
 </head>
@@ -26,7 +32,83 @@
     </ul>
     <hr>
     <h2>Links</h2>
-    <p><a herf="https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment3-BandiRamNiteeshReddy">Link to my stats in repo;</a></p>
+    <p><a href="https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment3-BandiRamNiteeshReddy">Link to my stats in repo;</a></p>
+    <hr>
+    <h2>Table</h2>
+    <p>This table is about how important sports and games in life</p>
+    <table>
+        <tr>
+            <th><h3>Sport or Game</h3></th>
+            <th><h3>Reason to play</h3></th>
+            <th><h3>Hrs to play in week</h3></th>
+        </tr>
+        <tr>
+            <th>Cricket</th>
+            <th>Good in mangement</th>
+            <th>10hrs</th>
+        </tr>
+        <tr>
+            <th>Swimming</th>
+            <th>Good to maintain physique</th>
+            <th>20hrs</th>
+        </tr>
+        <tr>
+            <th>Running</th>
+            <th>Good in endurence</th>
+            <th>10 hrs
+            </th>
+        </tr>
+        <tr>
+            <th>Vollyball</th>
+            <th>Good in musucle build</th>
+            <th>5 hrs</th>
+        </tr>
+    </table>
+    <hr>
+    <h2>Code snippet</h2>
+    <blockquote>Smooth Scroll with jQuery</blockquote>
+    <cite ="https://css-tricks.com/snippets/jquery/smooth-scrolling/#aa-smooth-scroll-with-jquery"></cite> 
+    <pre>
+        <code>
+            // Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+
+        </code>
+    </pre>
 </body>
 
 </html>
